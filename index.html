@@ -5,35 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/space.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
+      rel="stylesheet"
+    />
     <title>13기 아기사자</title>
   </head>
   <body>
     <div class="space-container">
-      <div class="star-wrapper">
-        <img src="assets/babylion.png" alt="크아앙" />
-      </div>
-      <div class="planet planet--top" style="--bg-url: url('assets/goal.jpg')">
-        <img class="planet-img" src="assets/planet4.png" />
-      </div>
-      <div class="planet planet--left" style="--bg-url: url('assets/pli.png')">
-        <img class="planet-img" src="assets/planet3.png" />
-      </div>
       <div
-        class="planet planet--right"
-        style="--bg-url: url('assets/Hobby.jpeg')"
+        class="planet planet--top"
+        id="top"
+        style="--bg-url: url('assets/goal.jpg')"
       >
-        <img class="planet-img" src="assets/planet2.png" />
+        <img class="planet-img" src="assets/planet4.png" draggable="false" />
       </div>
       <div
         class="planet planet--bottom"
+        id="bottom"
+        style="--bg-url: url('assets/pli.png')"
+      >
+        <img class="planet-img" src="assets/planet3.png" draggable="false" />
+      </div>
+      <div
+        class="planet planet--left"
+        id="left"
+        style="--bg-url: url('assets/Hobby.jpeg')"
+      >
+        <img class="planet-img" src="assets/planet2.png" draggable="false" />
+      </div>
+      <div
+        class="planet planet--right"
+        id="right"
         style="--bg-url: url('assets/babylion.png')"
       >
-        <img class="planet-img" src="assets/planet1.png" />
+        <img class="planet-img" src="assets/planet1.png" draggable="false" />
       </div>
     </div>
-    <div class="logo">
-      <img class="logo-img" src="assets/likelion.svg" alt="크아앙" />
+    <div class="panel">
+      <p class="panel-title">Now Playing</p>
+      <h3 class="panel-sum">간단한 요약</h3>
+      <p class="panel-des">공사 중</p>
+      <img class="panel-img" src="" alt="" />
     </div>
-    <script src="index.js"></script>
+    <div class="logo">
+      <img
+        class="logo-img"
+        src="assets/likelion.svg"
+        alt="크아앙"
+        draggable="false"
+      />
+    </div>
+    <script src="planet.js"></script>
+    <script src="panel.js"></script>
   </body>
 </html>

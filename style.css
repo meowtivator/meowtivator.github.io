@@ -20,19 +20,34 @@ body::before {
   opacity: 0.5;
 }
 
-.space-container {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+.panel {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 40vw;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(230, 144, 208, 0.8);
+  border-radius: 10px;
+  box-shadow: -2px 0 10px rgba(244, 167, 85, 0.3);
+  display: none;
+  overflow-y: auto;
+  z-index: 999;
 }
 
-.star-wrapper {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: -1;
+.panel.show {
+  display: block;
+}
+
+.panel-title {
+  font-family: "My Soul", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+}
+
+@media (max-width: 768px) {
 }
 
 .logo {
@@ -67,6 +82,12 @@ body::before {
     transparent 70%
   );
   z-index: -1;
+}
+
+.space-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .planet {
