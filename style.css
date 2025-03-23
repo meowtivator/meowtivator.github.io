@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Ownglyph_ParkDaHyun";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ownglyph_eunbyul21-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_eunbyul21-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -17,7 +32,7 @@ body::before {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .panel {
@@ -27,17 +42,20 @@ body::before {
   transform: translateY(-50%);
   width: 40vw;
   max-width: 500px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   background: rgba(230, 144, 208, 0.8);
   border-radius: 10px;
   box-shadow: -2px 0 10px rgba(244, 167, 85, 0.3);
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   overflow-y: auto;
   z-index: 999;
+  transition: visibility 0.5s ease, opacity 0.5s ease;
 }
 
 .panel.show {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .panel-title {
@@ -47,8 +65,15 @@ body::before {
   font-size: 45px;
 }
 .panel-sum {
-  font-size: 25px;
+  font-size: 37px;
+  font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
+  font-weight: bold;
 }
+.panel-des {
+  font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
+  font-size: 18px;
+}
+
 @media (max-width: 768px) {
 }
 
@@ -110,7 +135,9 @@ body::before {
   z-index: -1;
   clip-path: circle(49% at 50% 50%);
 }
-
+.planet.active::before {
+  opacity: 1;
+}
 .planet:hover::before {
   opacity: 1;
 }
@@ -123,32 +150,66 @@ body::before {
 .planet-img:hover {
   opacity: 0;
 }
-
+.ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  opacity: 1;
+  animation: rotate-axis 10s linear infinite;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+.ring-letter {
+  position: absolute;
+  font-size: calc(var(--planet-size) * 0.15);
+  font-family: "My Soul", cursive;
+  transform: rotateY(calc(var(--i) * 1deg))
+    translateZ(calc(var(--planet-size) * 0.55));
+  transition: width 0.5s ease, height 0.5s ease;
+  backface-visibility: hidden;
+}
 /* 행성 위치별 크기 및 밝기 조절 */
 .planet--left {
   top: 22%;
   left: 35%;
-  width: 9%;
+  --planet-size: 7vw;
+  width: var(--planet-size);
   z-index: 0;
   filter: brightness(60%);
 }
 .planet--right {
   top: 50%;
   left: 79%;
-  width: 23%;
+  --planet-size: 21vw;
+  width: var(--planet-size);
   z-index: 1;
   filter: brightness(80%);
 }
 .planet--top {
   top: 20%;
   left: 67%;
-  width: 8%;
+  --planet-size: 6vw;
+  width: var(--planet-size);
   z-index: 0;
   filter: brightness(60%);
 }
 .planet--bottom {
   top: 54%;
   left: 25%;
-  width: 35%;
+  --planet-size: 35vw;
+  width: var(--planet-size);
   z-index: 2;
+}
+
+@keyframes rotate-axis {
+  from {
+    transform: rotateZ(320deg) perspective(800px) rotateY(360deg);
+  }
+  to {
+    transform: rotateZ(320deg) perspective(800px) rotateY(0deg);
+  }
 }
