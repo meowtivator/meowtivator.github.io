@@ -24,7 +24,7 @@ const planetData = {
     title: "Playlist",
     summary: "제 노동요는요...",
     description:
-      "저는 서정적인 발라드와 팝송을 되게 좋아해요! 하나 하나의 작품에 그 아티스트만의 가치관과 감정선이 들어있는 것이 마치 실존하는 세계를 직접 감상할 수 있는 것만 같기 때문이에요. 그래서 그런지 한 곡에 정착하진 못하고 어떠한 분위기나 키워드를 가지고 있는 노래를 들은 뒤에 파생되는 여러 곡들을 이어들으며 시간을 보내고 있어요! 문제는 노래의 제목과 가수를 잘 모른다는 것...? 딱히 노래를 플레이리스트에 담아놓지 않아서 공유할 플레이 리스트는 없다는 것...? 그래도 최근에 많이 들은 이 노래를 함께 들으면서 제 자기소개 페이지를 구경해주시면 기쁠 것 같아요!",
+      '저는 서정적인 발라드와 팝송을 되게 좋아해요! 하나 하나의 작품에 그 아티스트만의 가치관과 감정선이 들어있는 것이 마치 실존하는 세계를 직접 감상할 수 있는 것만 같기 때문이에요. 그래서 그런지 한 곡에 정착하진 못하고 어떠한 분위기나 키워드를 가지고 있는 노래를 들은 뒤에 파생되는 여러 곡들을 이어들으며 시간을 보내고 있어요! 문제는 노래의 제목과 가수를 잘 모르고 공유할 플레이 리스트가 없다는 것...? 그래도 최근에는 "그랬나봐 - 토이" 에 빠져서 듣고 있어요! 배경음악은 저작권 문제로 다른 음악으로 대체하지만 함께 들으시면서 제 자기소개 페이지를 구경해주시면 기쁠 것 같아요!',
     image: "",
   },
   left: {
@@ -41,6 +41,8 @@ const panelTitle = document.querySelector(".panel .panel-title");
 const panelSum = document.querySelector(".panel .panel-sum");
 const panelDes = document.querySelector(".panel .panel-des");
 const panelImg = document.querySelector(".panel .panel-img");
+const musicBtn = document.getElementById("music-btn");
+const bgm = document.getElementById("bg-music");
 
 function updatePanel(planet) {
   let pos = planet.id;
@@ -76,6 +78,11 @@ function rotatePlanets(shift) {
 
 document.querySelectorAll(".planet").forEach((planet) => {
   planet.addEventListener("click", (e) => {
+    if (planet.id === "bottom" && planet.querySelector(".ring-container")) {
+      planet.querySelector(".ring-container").style.display = "none";
+      e.stopPropagation();
+    }
+
     document
       .querySelectorAll(".planet")
       .forEach((p) => p.classList.remove("active"));
@@ -94,9 +101,11 @@ document.querySelectorAll(".planet").forEach((planet) => {
       panel.classList.contains("show")
     ) {
       panel.classList.remove("show");
+      document.body.classList.remove("panel-open");
       return;
     }
     panel.classList.remove("show");
+    document.body.classList.remove("panel-open");
     let delayTime = shift === 2 ? 900 : shift !== 0 ? 400 : 100;
     setTimeout(() => {
       rotatePlanets(shift);
@@ -104,6 +113,7 @@ document.querySelectorAll(".planet").forEach((planet) => {
     setTimeout(() => {
       updatePanel(planet);
       panel.classList.add("show");
+      document.body.classList.add("panel-open");
     }, delayTime);
     e.stopPropagation();
   });
@@ -112,9 +122,30 @@ document.querySelectorAll(".planet").forEach((planet) => {
 document.addEventListener("click", (e) => {
   if (!panel.contains(e.target)) {
     panel.classList.remove("show");
+    document.body.classList.remove("panel-open");
     document.querySelectorAll(".planet").forEach((p) => {
       p.classList.remove("active");
     });
   }
+  e.stopPropagation();
+});
+
+musicBtn.addEventListener("click", (e) => {
+  musicBtn.classList.toggle("play-btn");
+  musicBtn.classList.toggle("pause-btn");
+  musicBtn.classList.add("active");
+  if (bgm.paused) {
+    bgm.play();
+  } else {
+    bgm.pause();
+  }
+
+  musicBtn.addEventListener(
+    "animationend",
+    () => {
+      musicBtn.classList.remove("active");
+    },
+    { once: true }
+  );
   e.stopPropagation();
 });

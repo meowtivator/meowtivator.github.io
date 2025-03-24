@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=My+Soul&display=swap"
+      rel="stylesheet"
+    />
     <title>13기 아기사자</title>
   </head>
   <body>
@@ -30,25 +36,35 @@
         <img class="planet-img" src="assets/planet3.png" draggable="false" />
         <div class="ring-container">
           <span class="ring-letter" style="--i: 0">C</span>
-          <span class="ring-letter" style="--i: 19">l</span>
-          <span class="ring-letter" style="--i: 38">i</span>
-          <span class="ring-letter" style="--i: 57">c</span>
-          <span class="ring-letter" style="--i: 76">k</span>
-          <span class="ring-letter" style="--i: 95">&nbsp;</span>
-          <span class="ring-letter" style="--i: 114">m</span>
-          <span class="ring-letter" style="--i: 133">e</span>
-          <span class="ring-letter" style="--i: 152">!</span>
-          <span class="ring-letter" style="--i: 171">&nbsp;</span>
-          <span class="ring-letter" style="--i: 190">C</span>
-          <span class="ring-letter" style="--i: 209">l</span>
-          <span class="ring-letter" style="--i: 228">i</span>
-          <span class="ring-letter" style="--i: 247">c</span>
-          <span class="ring-letter" style="--i: 266">k</span>
-          <span class="ring-letter" style="--i: 285">&nbsp;</span>
-          <span class="ring-letter" style="--i: 304">m</span>
-          <span class="ring-letter" style="--i: 323">e</span>
-          <span class="ring-letter" style="--i: 342">!</span>
+          <span class="ring-letter" style="--i: 13">l</span>
+          <span class="ring-letter" style="--i: 26">i</span>
+          <span class="ring-letter" style="--i: 39">c</span>
+          <span class="ring-letter" style="--i: 52">k</span>
+          <span class="ring-letter" style="--i: 65">!</span>
+          <span class="ring-letter" style="--i: 78">&nbsp;</span>
+          <span class="ring-letter" style="--i: 91">C</span>
+          <span class="ring-letter" style="--i: 104">l</span>
+          <span class="ring-letter" style="--i: 117">i</span>
+          <span class="ring-letter" style="--i: 130">c</span>
+          <span class="ring-letter" style="--i: 143">k</span>
+          <span class="ring-letter" style="--i: 156">!</span>
+          <span class="ring-letter" style="--i: 169">&nbsp;</span>
+          <span class="ring-letter" style="--i: 182">C</span>
+          <span class="ring-letter" style="--i: 195">l</span>
+          <span class="ring-letter" style="--i: 208">i</span>
+          <span class="ring-letter" style="--i: 221">c</span>
+          <span class="ring-letter" style="--i: 234">k</span>
+          <span class="ring-letter" style="--i: 247">!</span>
+          <span class="ring-letter" style="--i: 260">&nbsp;</span>
+          <span class="ring-letter" style="--i: 273">C</span>
+          <span class="ring-letter" style="--i: 286">l</span>
+          <span class="ring-letter" style="--i: 299">i</span>
+          <span class="ring-letter" style="--i: 312">c</span>
+          <span class="ring-letter" style="--i: 325">k</span>
+          <span class="ring-letter" style="--i: 338">!</span>
+          <span class="ring-letter" style="--i: 351">&nbsp;</span>
         </div>
+        <button id="music-btn" class="play-btn"></button>
       </div>
       <div
         class="planet planet--left"
@@ -79,6 +95,7 @@
         draggable="false"
       />
     </div>
+    <audio id="bg-music" src="assets/bgAudio.mp3"></audio>
     <script src="planet.js"></script>
   </body>
 </html>
