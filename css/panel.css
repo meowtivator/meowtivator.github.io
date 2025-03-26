@@ -1,0 +1,103 @@
+body.panel-open .planet--bottom .planet-img {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.panel-open .planet--bottom .play-btn,
+body.panel-open .planet--bottom .pause-btn {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.panel {
+  position: fixed;
+  text-align: center;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  max-width: 750px;
+  padding: 0 20px 20px 20px;
+  background: radial-gradient(circle at 20% 20%, #1e263ebc, #1e2030);
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px rgba(244, 167, 85, 0.3);
+  opacity: 0;
+  overflow-y: auto;
+  z-index: 10;
+  transition: visibility 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+  overflow: auto;
+}
+
+.panel.show {
+  opacity: 1;
+}
+
+.panel.intro {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.panel-title {
+  position: static;
+  display: block;
+  font-family: "My Soul", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+}
+.panel-sum {
+  position: relative;
+  display: block;
+  font-size: 37px;
+  font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
+  font-weight: bold;
+}
+.panel-divline {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  display: block;
+
+  border-top: 5px solid transparent;
+  border-image: radial-gradient(circle at 50% 50%, #bcc3f4, #30376d) 0.8;
+  border-radius: 10px;
+  padding: 0 0 20px 0;
+}
+
+.panel-des {
+  position: relative;
+  display: block;
+  font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
+  font-size: 18px;
+}
+
+.intro-btn {
+  font-family: "Ownglyph_ParkDaHyun";
+  width: 15vw;
+  height: 5vh;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  pointer-events: all;
+  /* margin-bottom: 20px; */
+}
+
+.intro-btn:hover {
+  background-color: gray;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

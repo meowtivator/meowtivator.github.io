@@ -5,29 +5,31 @@ const stateOrder = [
   "planet--left",
 ];
 
+const labelName = ["Goal", "Intro", "Playlist", "Hobby"];
+
 const planetData = {
-  top: {
+  Goal: {
     title: "Goal",
     summary: "멋사에서의 제 목표는요...",
     description:
       "풀스택(프론트엔드와 백엔드) 세션을 모두 수강하며 웹 개발 전반에 대한 이해도를 높이고 싶어요. 그리고 멋사의 부원들과 함께 프로젝트는 물론 다양한 활동들을 통해 자연스럽게 친해지고, 별처럼 빛나는 분들과 가까워지고 싶어요. 또한 여러 해커톤과 아이디어톤에도 도전하여, 수상에 가까이 다가가 보는 경험을 해보고자 합니다!! 궁극적으로는 이러한 세션을 모두 완수하고나서 정말 멋쟁이사자가 되어서, 다른 도움이 필요한 학우들이 있으면 언제든지 당당하게 도와드릴 수 있는 제가 있길 바라요 :)",
     image: "",
   },
-  right: {
+  Intro: {
     title: "Intro",
     summary: "제 소개를 하면요...",
     description:
       "안녕하세요! 구슬 아이스크림을 좋아하는 13기 아기사자 박재우입니다! 이번 멋쟁이 사자처럼 13기 프론트엔드로 지원했어요! 그나저나 제 MBTI는 분명 INF/TJ 인데 자꾸 다른 분들이 슈퍼 E라면서 오해를 하세요 ㅠㅠ 완전 슈퍼슈퍼 I인데... 그래서 슈퍼 E이신 분들 너무 멋있고 부러워요! 다가와주시면 격하게 반겨드릴 자신 있으니 언제든지 환영이에요!!",
     image: "",
   },
-  bottom: {
+  Playlist: {
     title: "Playlist",
     summary: "제 노동요는요...",
     description:
       '저는 서정적인 발라드와 팝송을 되게 좋아해요! 하나 하나의 작품에 그 아티스트만의 가치관과 감정선이 들어있는 것이 마치 실존하는 세계를 직접 감상할 수 있는 것만 같기 때문이에요. 그래서 그런지 한 곡에 정착하진 못하고 어떠한 분위기나 키워드를 가지고 있는 노래를 들은 뒤에 파생되는 여러 곡들을 이어들으며 시간을 보내고 있어요! 문제는 노래의 제목과 가수를 잘 모르고 공유할 플레이 리스트가 없다는 것...? 그래도 최근에는 "그랬나봐 - 토이" 에 빠져서 듣고 있어요! 배경음악은 저작권 문제로 다른 음악으로 대체하지만 함께 들으시면서 제 자기소개 페이지를 구경해주시면 기쁠 것 같아요!',
     image: "",
   },
-  left: {
+  Hobby: {
     title: "Hobby",
     summary: "저에 대해서 더 궁금하신가요?",
     description:
@@ -53,6 +55,21 @@ function updatePanel(planet) {
   panelImg.src = data.image;
 }
 
+function updateLabel(idx) {
+  const label = document.querySelector(".label");
+  label.classList.add("fade-out");
+
+  setTimeout(() => {
+    leftIdx = (idx + 1) % 4;
+    rightIdx = (idx - 1 + 4) % 4;
+    const leftLabel = document.querySelector(".label--left");
+    const rightLabel = document.querySelector(".label--right");
+    leftLabel.textContent = labelName[leftIdx];
+    rightLabel.textContent = labelName[rightIdx];
+    label.classList.remove("fade-out");
+  }, 500);
+}
+
 function rotatePlanets(shift) {
   document.querySelectorAll(".planet").forEach((p) => {
     let currentIndex = stateOrder.findIndex((state) =>
@@ -76,9 +93,13 @@ function rotatePlanets(shift) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  updatePanel({ id: "Playlist" });
+});
+
 document.querySelectorAll(".planet").forEach((planet) => {
   planet.addEventListener("click", (e) => {
-    if (planet.id === "bottom" && planet.querySelector(".ring-container")) {
+    if (planet.id === "Playlist" && planet.querySelector(".ring-container")) {
       planet.querySelector(".ring-container").style.display = "none";
       e.stopPropagation();
     }
@@ -104,6 +125,9 @@ document.querySelectorAll(".planet").forEach((planet) => {
       document.body.classList.remove("panel-open");
       return;
     }
+
+    let labelIdx = labelName.findIndex((label) => label === planet.id);
+    updateLabel(labelIdx);
     panel.classList.remove("show");
     document.body.classList.remove("panel-open");
     let delayTime = shift === 2 ? 900 : shift !== 0 ? 400 : 100;

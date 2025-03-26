@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/music.css" />
+    <link rel="stylesheet" href="css/panel.css" />
+    <link rel="stylesheet" href="css/planet.css" />
     <link rel="icon" href="assets/space.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,15 +26,15 @@
     <div class="space-container">
       <div
         class="planet planet--top"
-        id="top"
-        style="--bg-url: url('assets/goal.jpg')"
+        id="Goal"
+        style="--bg-url: url('../assets/goal.jpg')"
       >
         <img class="planet-img" src="assets/planet4.png" draggable="false" />
       </div>
       <div
         class="planet planet--bottom"
-        id="bottom"
-        style="--bg-url: url('assets/pli.png')"
+        id="Playlist"
+        style="--bg-url: url('../assets/pli.png')"
       >
         <img class="planet-img" src="assets/planet3.png" draggable="false" />
         <div class="ring-container">
@@ -68,24 +71,30 @@
       </div>
       <div
         class="planet planet--left"
-        id="left"
-        style="--bg-url: url('assets/Hobby.jpeg')"
+        id="Hobby"
+        style="--bg-url: url('../assets/Hobby.jpeg')"
       >
         <img class="planet-img" src="assets/planet2.png" draggable="false" />
       </div>
       <div
         class="planet planet--right"
-        id="right"
-        style="--bg-url: url('assets/babylion.png')"
+        id="Intro"
+        style="--bg-url: url('../assets/babylion.png')"
       >
         <img class="planet-img" src="assets/planet1.png" draggable="false" />
       </div>
     </div>
-    <div class="panel">
+    <div class="panel intro">
       <p class="panel-title">Now Playing</p>
       <p class="panel-sum">간단한 요약</p>
+      <p class="panel-divline"></p>
       <p class="panel-des">공사 중</p>
+      <button class="intro-btn">더 알아보기!</button>
       <img class="panel-img" src="" alt="" />
+    </div>
+    <div class="label">
+      <p class="label--left">Hobby</p>
+      <p class="label--right">Intro</p>
     </div>
     <div class="logo">
       <img

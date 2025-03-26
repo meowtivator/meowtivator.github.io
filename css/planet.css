@@ -1,0 +1,108 @@
+body.panel-open .planet--bottom .planet-img {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.space-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.planet {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: block;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-url) center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  clip-path: circle(49% at 50% 50%);
+}
+.planet.active::before {
+  opacity: 1;
+}
+
+.planet:hover::before {
+  opacity: 1;
+}
+
+.planet-img {
+  width: 100%;
+
+  transition: opacity 0.5s ease;
+}
+
+.planet-img:hover {
+  /* opacity: 0; */
+}
+
+.label {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-size: 3vw;
+  color: #fff;
+  background: transparent;
+  font-family: cursive;
+  pointer-events: none;
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.label--left {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-100%);
+  left: 7%;
+}
+.label--right {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-100%);
+  right: 7%;
+}
+.fade-out {
+  opacity: 0;
+}
+/* 행성 위치별 크기 및 밝기 조절 */
+.planet--left {
+  top: 50%;
+  left: 0%;
+  --planet-size: 10vw;
+  width: var(--planet-size);
+  z-index: 0;
+  filter: brightness(60%);
+}
+.planet--right {
+  top: 50%;
+  left: 100%;
+  --planet-size: 10vw;
+  width: var(--planet-size);
+  z-index: 1;
+  filter: brightness(60%);
+}
+.planet--top {
+  top: 30%;
+  left: 50%;
+  --planet-size: 6vw;
+  width: var(--planet-size);
+  z-index: 0;
+  opacity: 0;
+}
+.planet--bottom {
+  top: 110%;
+  left: 50%;
+  --planet-size: 50vw;
+  width: var(--planet-size);
+  z-index: 2;
+}

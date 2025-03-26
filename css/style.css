@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Ownglyph_ParkDaHyun";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ownglyph_eunbyul21-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_eunbyul21-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: sans-serif;
+  min-height: 100vh;
+  color: #fff;
+  background-color: #000;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/background.jpg");
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
+.logo {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  width: 5vw;
+  aspect-ratio: 1/1;
+  display: block;
+  z-index: 0;
+}
+
+.logo-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  clip-path: circle(70% at 50% 43%);
+  opacity: 0.5;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 166, 0, 0.859) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+.ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  opacity: 1;
+  animation: rotate-axis 7s linear infinite;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.ring-letter {
+  position: absolute;
+  font-size: calc(var(--planet-size) * 0.15);
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+
+  transform: rotateY(calc(var(--i) * 1deg))
+    translateZ(calc(var(--planet-size) * 0.55));
+  transition: all 0.5s ease;
+  backface-visibility: hidden;
+}
+@keyframes rotate-axis {
+  from {
+    transform: rotateZ(340deg) perspective(800px) rotateY(360deg);
+  }
+  to {
+    transform: rotateZ(340deg) perspective(800px) rotateY(0deg);
+  }
+}

@@ -1,0 +1,43 @@
+body.panel-open .planet--bottom .play-btn,
+body.panel-open .planet--bottom .pause-btn {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.play-btn {
+  position: absolute;
+  left: 42%;
+  bottom: 40%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: calc(var(--planet-size) * 0.1) 0 calc(var(--planet-size) * 0.1)
+    calc(var(--planet-size) * 0.17);
+  border-color: transparent transparent transparent #181d2edf;
+  background: none;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.pause-btn {
+  position: absolute;
+  left: 42%;
+  bottom: 42%;
+  height: calc(var(--planet-size) * 0.17);
+  border-style: double;
+  border-width: 0 0 0 calc(var(--planet-size) * 0.15);
+  border-color: transparent transparent transparent #181d2edf;
+  background: none;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+#music-btn.active {
+  animation: BtnClicked 0.5s ease forwards;
+}
