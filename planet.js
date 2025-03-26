@@ -216,6 +216,13 @@ document.querySelectorAll(".planet").forEach((planet) => {
   });
 });
 document.addEventListener("keydown", (e) => {
+  if (
+    !document.querySelector(".overlay").classList.contains("none") &&
+    (e.key === "ArrowLeft" || e.key === "ArrowRight")
+  ) {
+    document.querySelector(".overlay").classList.add("none");
+    return;
+  }
   if (document.body.classList.contains("active")) {
     return;
   }
@@ -235,6 +242,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 document.addEventListener("click", (e) => {
+  document.querySelector(".overlay").classList.add("none");
   if (e.target.closest(".panel-links")) {
     return;
   }
