@@ -79,17 +79,20 @@ body.panel-open .planet--bottom .planet-img {
   opacity: 1;
   top: 50%;
   user-select: none;
+  pointer-events: none;
 }
 .label--left {
   position: fixed;
   transform: translateY(-100%);
   left: 7%;
+  pointer-events: all;
   cursor: pointer;
 }
 .label--right {
   position: fixed;
   transform: translateY(-100%);
   right: 7%;
+  pointer-events: all;
   cursor: pointer;
 }
 .fade-out {
