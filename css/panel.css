@@ -5,7 +5,7 @@
 }
 .panel-wrapper {
   position: fixed;
-  text-align: center;
+
   top: var(--top);
   left: var(--left);
   transform: translate(-50%, -50%);
@@ -14,6 +14,7 @@
 }
 .panel {
   padding: 0 20px 20px 20px;
+  text-align: center;
   background: radial-gradient(circle at 20% 20%, #1e263ebc, #1e2030);
   border-radius: 10px;
   box-shadow: 10px 10px 30px rgba(244, 167, 85, 0.3);
@@ -23,9 +24,12 @@
   transition: transform 1s ease, visibility 0.5s ease, opacity 0.5s ease;
   pointer-events: none;
   overflow: auto;
+  line-height: 1.5;
 }
 .panel.sub {
   opacity: 0;
+  text-align: left;
+  padding: 0 20px 20px 40px;
 }
 .panel.sub.move-up {
   opacity: 1;
@@ -50,11 +54,12 @@
 .panel-sum {
   position: relative;
   display: block;
-  font-size: 37px;
+  font-size: 38px;
   font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
   font-weight: bold;
 }
-.panel-divline {
+.panel-divline,
+.sub-panel-divline {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -67,17 +72,21 @@
   padding: 0 0 20px 0;
 }
 
+.sub-panel-divline {
+  left: 14%;
+}
 .panel-des,
 .sub-panel-des {
   position: relative;
   display: block;
   font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
+  white-space: pre-line;
 }
 .panel-des {
-  font-size: 20px;
+  font-size: 24px;
 }
 .sub-panel-des {
-  font-size: 20px;
+  font-size: 24px;
 }
 .intro-btn,
 .back-btn {
@@ -93,13 +102,14 @@
   /* margin-bottom: 20px; */
 }
 
-.intro-btn:hover {
+.intro-btn:hover,
+.back-btn:hover {
   background-color: gray;
 }
 
 .panel-links {
   display: none;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   pointer-events: all;
 }
@@ -109,7 +119,7 @@
 .panel-links a img {
   width: 3vw;
   border-radius: 50%;
-  margin: 0 3vw 1vw 3vw;
+  margin: 0 2vw 1vw 0;
   border: 3px solid white;
   background-color: white;
 }
