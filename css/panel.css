@@ -46,10 +46,12 @@
 .sub-panel-title {
   position: static;
   display: block;
-  font-family: "My Soul", cursive;
-  font-weight: 400;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
-  font-size: 60px;
+  font-variation-settings: "wdth" 100;
+  font-size: 70px;
 }
 .panel-sum {
   position: relative;
