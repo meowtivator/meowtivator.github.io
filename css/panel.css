@@ -1,45 +1,45 @@
-body.panel-open .planet--bottom .planet-img {
+.panel.move-up {
+  transform: translateX(-50%) translateY(calc(-50% - 100vh));
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: transform 0.7s ease, opacity 1.5s ease;
 }
-
-body.panel-open .planet--bottom .play-btn,
-body.panel-open .planet--bottom .pause-btn {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-  cursor: pointer;
-  pointer-events: all;
-}
-
-.panel {
+.panel-wrapper {
   position: fixed;
   text-align: center;
-  top: 35%;
-  left: 50%;
+  top: var(--top);
+  left: var(--left);
   transform: translate(-50%, -50%);
-  width: 40vw;
+  width: 55vw;
   max-width: 750px;
+}
+.panel {
   padding: 0 20px 20px 20px;
   background: radial-gradient(circle at 20% 20%, #1e263ebc, #1e2030);
   border-radius: 10px;
   box-shadow: 10px 10px 30px rgba(244, 167, 85, 0.3);
-  opacity: 0;
+  opacity: 1;
   overflow-y: auto;
   z-index: 10;
-  transition: visibility 0.5s ease, opacity 0.5s ease;
+  transition: transform 1s ease, visibility 0.5s ease, opacity 0.5s ease;
   pointer-events: none;
   overflow: auto;
 }
-
-.panel.show {
+.panel.sub {
+  opacity: 0;
+}
+.panel.sub.move-up {
   opacity: 1;
+}
+.panel.show {
+  animation: showInfo 0.7s ease forwards;
 }
 
 .panel.intro {
   animation: fadeUp 0.5s ease forwards;
 }
 
-.panel-title {
+.panel-title,
+.sub-panel-title {
   position: static;
   display: block;
   font-family: "My Soul", cursive;
@@ -67,14 +67,20 @@ body.panel-open .planet--bottom .pause-btn {
   padding: 0 0 20px 0;
 }
 
-.panel-des {
+.panel-des,
+.sub-panel-des {
   position: relative;
   display: block;
   font-family: "Ownglyph_eunbyul21-Rg", sans-serif;
-  font-size: 18px;
 }
-
-.intro-btn {
+.panel-des {
+  font-size: 20px;
+}
+.sub-panel-des {
+  font-size: 20px;
+}
+.intro-btn,
+.back-btn {
   font-family: "Ownglyph_ParkDaHyun";
   width: 15vw;
   height: 5vh;
@@ -91,13 +97,42 @@ body.panel-open .planet--bottom .pause-btn {
   background-color: gray;
 }
 
+.panel-links {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+}
+.panel-links.show {
+  display: flex;
+}
+.panel-links a img {
+  width: 3vw;
+  border-radius: 50%;
+  margin: 0 3vw 1vw 3vw;
+  border: 3px solid white;
+  background-color: white;
+}
+
+.panel-links a img:hover {
+  scale: 1.1;
+}
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translate(-50%, -40%);
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
+  }
+}
+
+@keyframes showInfo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -35,13 +35,28 @@ body.panel-open .planet--bottom .planet-img {
 .planet:hover::before {
   opacity: 1;
 }
-
+.planet.active img {
+  opacity: 0;
+}
 .planet-img {
   width: 100%;
-
   transition: opacity 0.5s ease;
 }
-
+.planet.move-main {
+  transform: translate(10%, calc(-50% - 80vh));
+  scale: 0.8;
+  transition: all 0.7s ease;
+}
+.move-up {
+  transform: translateY(-100vh) !important;
+  opacity: 0;
+  transition: transform 1s ease, opacity 1.5s ease;
+}
+.label.move-up {
+  transform: translateY(-100vh);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1.5s ease;
+}
 .planet-img:hover {
   /* opacity: 0; */
 }
@@ -58,16 +73,15 @@ body.panel-open .planet--bottom .planet-img {
   z-index: -1;
   transition: all 0.5s ease;
   opacity: 1;
+  top: 50%;
 }
 .label--left {
   position: fixed;
-  top: 50%;
   transform: translateY(-100%);
   left: 7%;
 }
 .label--right {
   position: fixed;
-  top: 50%;
   transform: translateY(-100%);
   right: 7%;
 }

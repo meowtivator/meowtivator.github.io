@@ -1,5 +1,5 @@
-body.panel-open .planet--bottom .play-btn,
-body.panel-open .planet--bottom .pause-btn {
+body.active .planet--bottom .play-btn,
+body.active .planet--bottom .pause-btn {
   opacity: 1;
   transition: opacity 0.5s ease;
   cursor: pointer;
