@@ -201,7 +201,25 @@ document.querySelectorAll(".planet").forEach((planet) => {
     e.stopPropagation();
   });
 });
+document.addEventListener("keydown", (e) => {
+  if (document.body.classList.contains("active")) {
+    return;
+  }
 
+  if (e.key === "ArrowLeft") {
+    rotatePlanets(1);
+    const planet = document.querySelector(".planet--bottom");
+    let labelIdx = labelName.findIndex((label) => label === planet.id);
+    updatePanel(planet);
+    updateLabel(labelIdx);
+  } else if (e.key === "ArrowRight") {
+    rotatePlanets(-1);
+    const planet = document.querySelector(".planet--bottom");
+    let labelIdx = labelName.findIndex((label) => label === planet.id);
+    updatePanel(planet);
+    updateLabel(labelIdx);
+  }
+});
 document.addEventListener("click", (e) => {
   if (e.target.closest(".panel-links")) {
     return;
