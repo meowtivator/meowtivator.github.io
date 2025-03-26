@@ -16,6 +16,7 @@ body.panel-open .planet--bottom .planet-img {
   transition: all 0.5s ease;
   overflow: hidden;
   z-index: 20;
+  cursor: pointer;
 }
 
 .planet::before {
@@ -73,21 +74,23 @@ body.panel-open .planet--bottom .planet-img {
   font-weight: 200;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  pointer-events: none;
-  z-index: -1;
+  z-index: 1;
   transition: all 0.5s ease;
   opacity: 1;
   top: 50%;
+  user-select: none;
 }
 .label--left {
   position: fixed;
   transform: translateY(-100%);
   left: 7%;
+  cursor: pointer;
 }
 .label--right {
   position: fixed;
   transform: translateY(-100%);
   right: 7%;
+  cursor: pointer;
 }
 .fade-out {
   opacity: 0;
