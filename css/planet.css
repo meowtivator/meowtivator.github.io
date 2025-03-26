@@ -58,9 +58,6 @@ body.panel-open .planet--bottom .planet-img {
   opacity: 0;
   transition: transform 1s ease, opacity 1.5s ease;
 }
-.planet-img:hover {
-  /* opacity: 0; */
-}
 
 .label {
   position: fixed;

@@ -157,14 +157,14 @@ document.querySelector(".intro-btn").addEventListener("click", function (e) {
 });
 
 document.querySelector(".label--left").addEventListener("click", (e) => {
-  rotatePlanets(1);
+  rotatePlanets(-1);
   const planet = document.querySelector(".planet--bottom");
   let labelIdx = labelName.findIndex((label) => label === planet.id);
   updatePanel(planet);
   updateLabel(labelIdx);
 });
 document.querySelector(".label--right").addEventListener("click", (e) => {
-  rotatePlanets(-1);
+  rotatePlanets(1);
   const planet = document.querySelector(".planet--bottom");
   let labelIdx = labelName.findIndex((label) => label === planet.id);
   updatePanel(planet);
