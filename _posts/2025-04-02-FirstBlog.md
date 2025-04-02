@@ -1,7 +1,7 @@
 ---
 title: Hello Blog
 date: 2025-04-02 16:03:02 +0900
-description: 
+description: 첫 블로그 포스팅입니다!!
 categories: [블로그, 첫 시작]
 tags: [블로그]
 ---
