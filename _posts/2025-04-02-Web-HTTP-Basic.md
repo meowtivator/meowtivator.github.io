@@ -38,7 +38,7 @@ tags: [web, basic, 멋사, 과제]
 
 ### 클라이언트 - 서버 구조 흐름
 
-1. 사용자가 브라우저 주소창에 [www.google.com](http://www.google.com) 입력
+1. 사용자가 브라우저 주소창에 `www.google.com` 입력
 2. DNS가 도메인을 IP주소로 전환
 3. 브라우저가 해당 IP + PORT로 요청 전송
 4. 서버가 요청을 처리한 뒤 HTML/CSS/JS, JSON 파일 응답
