@@ -8,29 +8,29 @@ tags: [web, basic, 멋사, 과제]
 
 ## 과제 사진
 ### 1-1. JSON 문법 규칙 1번 오류
-![img-description](5week_hw/JSON_Error_1.png)
+![img-description](/5week_hw/JSON_Error_1.png)
 _1-1. JSON 문법 규칙 1번 오류_
 
 ### 1-2. JSON 문법 규칙 3번 오류
-![img-description](5week_hw/JSON_Error_3.png)
+![img-description](/5week_hw/JSON_Error_3.png)
 
 ### 1-3. JSON 문법 규칙 4번 오류
-![img-description](5week_hw/JSON_Error_4.png)
+![img-description](/5week_hw/JSON_Error_4.png)
 
 ### 4-1. POST METHOD 실습
-![img-description](5week_hw/POST_METHOD.png)
+![img-description](/5week_hw/POST_METHOD.png)
 
 ### 4-2. GET METHOD 실습
-![img-description](5week_hw/GET_METHOD.png)
+![img-description](/5week_hw/GET_METHOD.png)
 
 ### 4-3. PUT METHOD 실습
-![img-description](5week_hw/PUT_METHOD.png)
+![img-description](/5week_hw/PUT_METHOD.png)
 
 ### 4-4. PATCH METHOD 실습
-![img-description](5week_hw/PATCH_METHOD.png)
+![img-description](/5week_hw/PATCH_METHOD.png)
 
 ### 4-5.DELETE METHOD 실습
-![img-description](5week_hw/DELETE_METHOD.png)
+![img-description](/5week_hw/DELETE_METHOD.png)
 
 
 이렇게 5주차 공통 세션 과제를 마치게 되었다.
