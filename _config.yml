@@ -83,7 +83,7 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: https://github.com/meowtivator/data-repo
+cdn: https://github.com/meowtivator/data-repo/tree/main
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "avatar/meowti.jpg"
