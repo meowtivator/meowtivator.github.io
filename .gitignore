@@ -1,0 +1,52 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
+.sass-cache/
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+*.swp
+*.swo
+
+# Misc
+_sass/vendors
+assets/js/dist
+
+# 로컬 개발 환경
+.DS_Store
+Thumbs.db
+*~
+.env
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# 옵시디언 파일
+.obsidian/
+.makemd/
+.space/
+.trash/
+Tags/
+tempPost/
+Vault.md
