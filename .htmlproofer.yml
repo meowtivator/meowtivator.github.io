@@ -1,0 +1,4 @@
+# .htmlproofer.yml
+
+url_ignore:
+  - ^http://meowtivator-blog-image\.s3-website\.ap-northeast-2\.amazonaws\.com
