@@ -1,8 +1,6 @@
 # .htmlproofer.yml
 
-disable_external: true # 외부 링크 검사 끔
+disable_external: true # 외부 링크 전체 무시 (아예 검사하지 않음)
+
 url_ignore:
   - ^http://meowtivator-blog-image\.s3-website\.ap-northeast-2\.amazonaws\.com
-  - ^http://127\.0\.0\.1
-  - ^http://0\.0\.0\.0
-  - ^http://localhost
