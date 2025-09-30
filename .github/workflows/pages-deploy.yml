@@ -51,9 +51,14 @@ jobs:
           JEKYLL_ENV: "production"
 
       - name: Test site
-        run: |
-          ls -alh   # 디버깅용: 현재 디렉토리에 .htmlproofer.yml이 존재하는지 확인
-          bundle exec htmlproofer "_site${{ steps.pages.outputs.base_path }}" --config .htmlproofer.yml
+        run: >
+          bundle exec htmlproofer _site
+          --disable-external
+          --ignore-urls
+          "/^http:\/\/127\.0\.0\.1/",
+          "/^http:\/\/0\.0\.0\.0/",
+          "/^http:\/\/localhost/",
+          "http://meowtivator-blog-image.s3-website.ap-northeast-2.amazonaws.com"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
