@@ -4,3 +4,6 @@ disable_external: true # 외부 링크 전체 무시 (아예 검사하지 않음
 
 url_ignore:
   - ^http://meowtivator-blog-image\.s3-website\.ap-northeast-2\.amazonaws\.com
+  - https://fonts\.googleapis\.com
+  - https://fonts\.gstatic\.com
+  - ^https://meowtivator\.github\.io
