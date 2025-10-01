@@ -203,6 +203,8 @@ exclude:
   - purgecss.js
   - rollup.config.js
   - "package*.json"
+  - .trash/
+  - .obsidian/
 
 jekyll-archives:
   enabled: [categories, tags]
