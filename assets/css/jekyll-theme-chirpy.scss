@@ -1,0 +1,336 @@
+/* ============================================
+   Obsidian Nord Theme Colors for Chirpy
+   ============================================ */
+
+:root {
+  /* Nord Polar Night */
+  --nord0: #2e3440; /* 배경 - 가장 어두운 */
+  --nord1: #3b4252; /* 배경 - 밝은 */
+  --nord2: #434c5e; /* 선택, 강조 배경 */
+  --nord3: #4c566a; /* 주석, 비활성 */
+
+  /* Nord Snow Storm */
+  --nord4: #d8dee9; /* 텍스트 - 어두운 */
+  --nord5: #e5e9f0; /* 텍스트 - 기본 */
+  --nord6: #eceff4; /* 텍스트 - 밝은 */
+
+  /* Nord Frost */
+  --nord7: #8fbcbb; /* 청록색 */
+  --nord8: #88c0d0; /* 하늘색 - 링크 */
+  --nord9: #81a1c1; /* 파란색 */
+  --nord10: #5e81ac; /* 진한 파란색 */
+
+  /* Nord Aurora */
+  --nord11: #bf616a; /* 빨간색 - 강조 */
+  --nord12: #d08770; /* 주황색 */
+  --nord13: #ebcb8b; /* 노란색 - bold */
+  --nord14: #a3be8c; /* 초록색 - 코드 */
+  --nord15: #b48ead; /* 보라색 */
+}
+
+/* Dark Mode 기본 색상 */
+[data-mode='dark'] {
+  --body-bg: var(--nord0);
+  --sidebar-bg: var(--nord1);
+  --card-bg: var(--nord1);
+  --text-color: var(--nord5);
+  --text-muted-color: var(--nord4);
+  --heading-color: var(--nord8);
+  --label-color: var(--nord4);
+  --blockquote-border-color: var(--nord9);
+  --blockquote-text-color: var(--nord4);
+  --link-color: var(--nord8);
+  --link-hover-color: var(--nord7);
+  --button-bg: var(--nord2);
+  --btn-border-color: var(--nord3);
+  --btn-backtotop-color: var(--nord4);
+  --btn-backtotop-border-color: var(--nord3);
+  --btn-box-shadow: var(--nord1);
+  --checkbox-color: var(--nord8);
+  --checkbox-checked-color: var(--nord10);
+
+  /* 코드 블록 */
+  --code-bg: var(--nord1);
+  --code-color: var(--nord14);
+  --kbd-wrap-color: var(--nord3);
+  --kbd-text-color: var(--nord5);
+  --kbd-bg-color: var(--nord0);
+  --prompt-text-color: var(--nord4);
+  --prompt-tip-bg: rgba(129, 161, 193, 0.2);
+  --prompt-tip-icon-color: var(--nord9);
+  --prompt-info-bg: rgba(136, 192, 208, 0.2);
+  --prompt-info-icon-color: var(--nord8);
+  --prompt-warning-bg: rgba(235, 203, 139, 0.2);
+  --prompt-warning-icon-color: var(--nord13);
+  --prompt-danger-bg: rgba(191, 97, 106, 0.2);
+  --prompt-danger-icon-color: var(--nord11);
+
+  /* 테이블 */
+  --table-border-color: var(--nord3);
+  --table-header-bg: var(--nord2);
+  --table-even-bg: rgba(67, 76, 94, 0.3);
+
+  /* 스크롤바 */
+  --scrollbar-track-bg: var(--nord0);
+  --scrollbar-thumb-bg: var(--nord3);
+  --scrollbar-thumb-hover-bg: var(--nord9);
+
+  /* 검색 */
+  --search-wrapper-bg: var(--nord1);
+  --search-border-color: var(--nord3);
+  --search-icon-color: var(--nord4);
+  --search-text-color: var(--nord5);
+
+  /* 태그 */
+  --tag-bg: var(--nord2);
+  --tag-hover: var(--nord3);
+  --tag-border: var(--nord3);
+
+  /* 구분선 */
+  --border-color: var(--nord3);
+  --hr-color: var(--nord3);
+}
+
+/* Light Mode 색상 */
+[data-mode='light'] {
+  --body-bg: var(--nord6);
+  --sidebar-bg: var(--nord5);
+  --card-bg: var(--nord5);
+  --text-color: var(--nord0);
+  --text-muted-color: var(--nord3);
+  --heading-color: var(--nord10);
+  --label-color: var(--nord3);
+  --blockquote-border-color: var(--nord9);
+  --blockquote-text-color: var(--nord3);
+  --link-color: var(--nord10);
+  --link-hover-color: var(--nord9);
+  --button-bg: var(--nord4);
+  --btn-border-color: var(--nord3);
+  --code-bg: var(--nord4);
+  --code-color: var(--nord14);
+  --kbd-wrap-color: var(--nord4);
+  --kbd-text-color: var(--nord0);
+  --kbd-bg-color: var(--nord5);
+
+  /* 태그 */
+  --tag-bg: var(--nord4);
+  --tag-hover: var(--nord3);
+  --tag-border: var(--nord3);
+
+  /* 구분선 */
+  --border-color: var(--nord4);
+  --hr-color: var(--nord4);
+}
+
+/* 마크다운 컨텐츠 세부 색상 */
+.post-content,
+#post-wrapper {
+  /* 헤딩 그라데이션 효과 */
+  h1 {
+    color: var(--nord8) !important;
+    border-bottom: 2px solid var(--nord8);
+  }
+
+  h2 {
+    color: var(--nord9) !important;
+    border-bottom: 1px solid var(--nord9);
+  }
+
+  h3 {
+    color: var(--nord10) !important;
+  }
+
+  h4,
+  h5,
+  h6 {
+    color: var(--nord7) !important;
+  }
+
+  /* Strong - Nord13 노란색 (Obsidian Nord의 bold 색상) */
+  strong {
+    color: var(--nord13) !important;
+    font-weight: 600;
+  }
+
+  /* Emphasis - Nord12 주황색 */
+  em {
+    color: var(--nord12) !important;
+    font-style: italic;
+  }
+
+  /* Strong + Emphasis */
+  strong em,
+  em strong {
+    color: var(--nord11) !important;
+  }
+
+  /* 인라인 코드 - Nord14 초록색 */
+  code:not(.highlighter-rouge),
+  code.language-plaintext {
+    background-color: var(--nord1) !important;
+    color: var(--nord14) !important;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+
+  [data-mode='light'] & code:not(.highlighter-rouge),
+  [data-mode='light'] & code.language-plaintext {
+    background-color: var(--nord4) !important;
+    color: var(--nord10) !important;
+  }
+
+  /* 링크 */
+  a {
+    color: var(--nord8) !important;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--nord7) !important;
+      border-bottom-color: var(--nord7);
+    }
+  }
+
+  /* 인용구 */
+  blockquote {
+    border-left: 4px solid var(--nord9) !important;
+    background-color: rgba(129, 161, 193, 0.1) !important;
+    color: var(--nord4) !important;
+    padding: 1em 1.5em;
+    margin: 1em 0;
+
+    p {
+      color: inherit !important;
+    }
+  }
+
+  /* 리스트 마커 색상 */
+  ul li::marker {
+    color: var(--nord8);
+  }
+
+  ol li::marker {
+    color: var(--nord9);
+    font-weight: 600;
+  }
+
+  /* 체크박스 */
+  input[type='checkbox'] {
+    accent-color: var(--nord8);
+  }
+
+  /* 수평선 */
+  hr {
+    border-color: var(--nord3) !important;
+    opacity: 0.5;
+  }
+
+  /* 테이블 */
+  table {
+    thead {
+      background-color: var(--nord2) !important;
+
+      th {
+        color: var(--nord8) !important;
+        border-color: var(--nord3) !important;
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: rgba(136, 192, 208, 0.1) !important;
+        }
+
+        &:nth-child(even) {
+          background-color: rgba(67, 76, 94, 0.3) !important;
+        }
+      }
+
+      td {
+        border-color: var(--nord3) !important;
+      }
+    }
+  }
+
+  /* 하이라이트/마크 */
+  mark,
+  ::selection {
+    background-color: rgba(235, 203, 139, 0.3) !important;
+    color: inherit !important;
+  }
+
+  /* 각주 */
+  .footnote,
+  .reversefootnote {
+    color: var(--nord12) !important;
+  }
+
+  /* Task list */
+  .task-list-item {
+    input[type='checkbox']:checked {
+      accent-color: var(--nord14);
+    }
+  }
+}
+
+/* 코드 블록 신택스 하이라이팅 (Rouge/Pygments) */
+.highlight {
+  background-color: var(--nord1) !important;
+
+  .c,  /* Comment */
+  .cm, /* Comment.Multiline */
+  .cp, /* Comment.Preproc */
+  .c1, /* Comment.Single */
+  .cs  /* Comment.Special */ {
+    color: var(--nord3) !important;
+    font-style: italic;
+  }
+
+  .k,  /* Keyword */
+  .kc, /* Keyword.Constant */
+  .kd, /* Keyword.Declaration */
+  .kp, /* Keyword.Pseudo */
+  .kr  /* Keyword.Reserved */ {
+    color: var(--nord9) !important;
+  }
+
+  .s,  /* String */
+  .s1, /* String.Single */
+  .s2, /* String.Double */
+  .sh, /* String.Heredoc */
+  .sx  /* String.Other */ {
+    color: var(--nord14) !important;
+  }
+
+  .m,  /* Number */
+  .mi, /* Number.Integer */
+  .mf, /* Number.Float */
+  .mh, /* Number.Hex */
+  .mo  /* Number.Oct */ {
+    color: var(--nord15) !important;
+  }
+
+  .n,  /* Name */
+  .na, /* Name.Attribute */
+  .nb, /* Name.Builtin */
+  .nc, /* Name.Class */
+  .nf  /* Name.Function */ {
+    color: var(--nord8) !important;
+  }
+
+  .o,  /* Operator */
+  .ow  /* Operator.Word */ {
+    color: var(--nord9) !important;
+  }
+
+  .p   /* Punctuation */ {
+    color: var(--nord4) !important;
+  }
+
+  .err /* Error */ {
+    color: var(--nord11) !important;
+  }
+}
