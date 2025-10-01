@@ -7,133 +7,209 @@
   {%- endif -%}
 ';
 
-/*  ==========================================
-    Obsidian Nord Theme Colors for Chirpy
-    ========================================== */
+/* ============================================
+    Obsidian Nord Theme - Exact Color Mapping
+    ============================================ */
 
 :root {
-  --nord0: #2e3440 !important;
-  --nord1: #3b4252 !important;
-  --nord2: #434c5e !important;
-  --nord3: #4c566a !important;
-  --nord4: #d8dee9 !important;
-  --nord5: #e5e9f0 !important;
-  --nord6: #eceff4 !important;
-  --nord7: #8fbcbb !important;
-  --nord8: #88c0d0 !important;
-  --nord9: #81a1c1 !important;
-  --nord10: #5e81ac !important;
-  --nord11: #bf616a !important;
-  --nord12: #d08770 !important;
-  --nord13: #ebcb8b !important;
-  --nord14: #a3be8c !important;
-  --nord15: #b48ead !important;
+  /* Nord Polar Night */
+  --nord-dark0: #2e3440;
+  --nord-dark1: #3b4252;
+  --nord-dark2: #434c5e;
+  --nord-dark3: #4c566a;
+
+  /* Nord Snow Storm */
+  --nord-light0: #d8dee9;
+  --nord-light1: #e5e9f0;
+  --nord-light2: #eceff4;
+
+  /* Nord Frost */
+  --nord-frost0: #8fbcbb;
+  --nord-frost1: #88c0d0;
+  --nord-frost2: #81a1c1;
+  --nord-frost3: #5e81ac;
+
+  /* Nord Aurora */
+  --nord-red: #bf616a;
+  --nord-orange: #d08770;
+  --nord-yellow: #ebcb8b;
+  --nord-green: #a3be8c;
+  --nord-purple: #b48ead;
 }
 
-/* Dark Mode - 더 구체적인 선택자 */
+/* ============================================
+   Dark Mode - Obsidian Nord Exact Match
+   ============================================ */
 html[data-mode='dark'],
-html[data-mode='dark'] body,
 [data-mode='dark'] {
+  /* 배경 */
   --body-bg: #2e3440 !important;
   --sidebar-bg: #3b4252 !important;
   --card-bg: #3b4252 !important;
-  --text-color: #e5e9f0 !important;
-  --text-muted-color: #d8dee9 !important;
-  --heading-color: #88c0d0 !important;
-  --label-color: #d8dee9 !important;
-  --blockquote-border-color: #81a1c1 !important;
-  --blockquote-text-color: #d8dee9 !important;
-  --link-color: #88c0d0 !important;
-  --link-hover-color: #8fbcbb !important;
-  --button-bg: #434c5e !important;
-  --btn-border-color: #4c566a !important;
+  
+  /* 텍스트 */
+  --text-color: #eceff4 !important;
+  --text-muted-color: #e5e9f0 !important;
+  --text-faint: #d8dee9 !important;
+  
+  /* 링크 */
+  --link-color: #d08770 !important;           /* Obsidian의 text-accent */
+  --link-hover-color: #81a1c1 !important;     /* Obsidian의 text-accent-hover */
+  
+  /* 헤딩 - Obsidian과 동일 */
+  --h1-color: #bf616a !important;             /* 빨간색 */
+  --h2-color: #ebcb8b !important;             /* 노란색 */
+  --h3-color: #a3be8c !important;             /* 초록색 */
+  --h4-color: #b48ead !important;             /* 보라색 */
+  --h5-color: #8fbcbb !important;             /* 청록색 */
+  --h6-color: #81a1c1 !important;             /* 파란색 */
+  
+  /* 코드 */
   --code-bg: #3b4252 !important;
-  --code-color: #a3be8c !important;
-  --border-color: #4c566a !important;
-  --hr-color: #4c566a !important;
+  --code-color: #88c0d0 !important;           /* Obsidian의 code-normal */
+  
+  /* 기타 */
+  --blockquote-border-color: #81a1c1 !important;
+  --border-color: #434c5e !important;
 }
 
-/* Light Mode */
+/* ============================================
+   Light Mode - Obsidian Nord Exact Match
+   ============================================ */
 html[data-mode='light'],
-html[data-mode='light'] body,
 [data-mode='light'] {
-  --body-bg: #eceff4 !important;
-  --sidebar-bg: #e5e9f0 !important;
-  --card-bg: #e5e9f0 !important;
-  --text-color: #2e3440 !important;
-  --text-muted-color: #4c566a !important;
-  --heading-color: #5e81ac !important;
-  --link-color: #5e81ac !important;
-  --link-hover-color: #81a1c1 !important;
-  --code-bg: #d8dee9 !important;
-  --code-color: #5e81ac !important;
+  --body-bg: #ffffff !important;
+  --text-color: #434c5e !important;
+  --h1-color: #bf616a !important;
+  --h2-color: #ebcb8b !important;
+  --h3-color: #a3be8c !important;
+  --bold-color: #a3be8c !important;           /* Light mode는 green */
+  --code-color: #88c0d0 !important;
 }
 
-/* 마크다운 요소 - 더 구체적인 선택자 */
-#post-wrapper .post-content h1,
+/* ============================================
+   마크다운 요소 - Obsidian 스타일 정확히 재현
+   ============================================ */
+
+/* 헤딩 */
+#post-wrapper h1,
 .post-content h1,
 article h1 {
-  color: #88c0d0 !important;
-  border-bottom: 2px solid #88c0d0 !important;
+  color: #bf616a !important;  /* Obsidian h1-color */
 }
 
-#post-wrapper .post-content h2,
+#post-wrapper h2,
 .post-content h2,
 article h2 {
-  color: #81a1c1 !important;
-  border-bottom: 1px solid #81a1c1 !important;
+  color: #ebcb8b !important;  /* Obsidian h2-color - 노란색 */
 }
 
-#post-wrapper .post-content h3,
+#post-wrapper h3,
 .post-content h3,
 article h3 {
-  color: #5e81ac !important;
+  color: #a3be8c !important;  /* Obsidian h3-color - 초록색 */
 }
 
-#post-wrapper .post-content strong,
+#post-wrapper h4,
+.post-content h4,
+article h4 {
+  color: #b48ead !important;  /* Obsidian h4-color - 보라색 */
+}
+
+#post-wrapper h5,
+.post-content h5,
+article h5 {
+  color: #8fbcbb !important;  /* Obsidian h5-color */
+}
+
+#post-wrapper h6,
+.post-content h6,
+article h6 {
+  color: #81a1c1 !important;  /* Obsidian h6-color */
+}
+
+/* Strong (Bold) - 노란색 */
+#post-wrapper strong,
 .post-content strong,
-article strong {
-  color: #ebcb8b !important;
+article strong,
+.cm-strong {
+  color: #ebcb8b !important;  /* Obsidian bold-color */
   font-weight: 600 !important;
 }
 
-#post-wrapper .post-content em,
+/* Emphasis (Italic) - 노란색 */
+#post-wrapper em,
 .post-content em,
 article em {
-  color: #d08770 !important;
+  color: #ebcb8b !important;  /* Obsidian italic-color */
   font-style: italic !important;
 }
 
-#post-wrapper .post-content code:not(.highlighter-rouge),
+/* 인라인 코드 */
+#post-wrapper code:not(.highlighter-rouge),
 .post-content code:not(.highlighter-rouge),
-article code:not(.highlighter-rouge) {
-  background-color: #3b4252 !important;
-  color: #a3be8c !important;
-  padding: 0.2em 0.4em !important;
+article code:not(.highlighter-rouge),
+code.language-plaintext {
+  background-color: #3b4252 !important;  /* Obsidian code-background */
+  color: #88c0d0 !important;             /* Obsidian code-normal - 청록색 */
+  padding: 0.1em 0.25em !important;
   border-radius: 3px !important;
 }
 
-#post-wrapper .post-content a,
+/* 링크 */
+#post-wrapper a,
 .post-content a,
 article a {
-  color: #88c0d0 !important;
+  color: #d08770 !important;  /* Obsidian text-accent - 주황색 */
   text-decoration: none !important;
-  
-  &:hover {
-    color: #8fbcbb !important;
-    border-bottom: 1px solid #8fbcbb !important;
-  }
+}
+
+#post-wrapper a:hover,
+.post-content a:hover,
+article a:hover {
+  color: #81a1c1 !important;  /* Obsidian text-accent-hover */
+  text-decoration: underline !important;
+}
+
+/* 하이라이트/마크 */
+#post-wrapper mark,
+.post-content mark,
+article mark,
+::selection {
+  background-color: #88c0d0 !important;  /* Obsidian text-highlight-bg */
+  color: #2e3440 !important;             /* Obsidian text-highlight-fg */
 }
 
 /* 인용구 */
-#post-wrapper .post-content blockquote,
+#post-wrapper blockquote,
 .post-content blockquote,
 article blockquote {
   border-left: 4px solid #81a1c1 !important;
   background-color: rgba(129, 161, 193, 0.1) !important;
-  color: #d8dee9 !important;
   padding: 1em 1.5em !important;
-  margin: 1em 0 !important;
+}
+
+/* 체크박스 */
+input[type='checkbox'] {
+  border: 1px solid #8fbcbb !important;  /* Obsidian checkbox-color */
+  accent-color: #8fbcbb !important;
+}
+
+input[type='checkbox']:checked {
+  background-color: #8fbcbb !important;
+}
+
+/* 테이블 */
+table thead {
+  background-color: rgba(67, 76, 94, 0.2) !important;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(67, 76, 94, 0.4) !important;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: rgba(67, 76, 94, 0.8) !important;
 }
 
 /* 코드 블록 */
@@ -141,11 +217,9 @@ article blockquote {
 pre.highlight,
 div.highlight {
   background-color: #3b4252 !important;
-  border-radius: 6px !important;
 }
 
-.highlight code,
-pre.highlight code {
+.highlight code {
   color: #e5e9f0 !important;
 }
 
@@ -153,27 +227,26 @@ pre.highlight code {
 .highlight .c,
 .highlight .cm,
 .highlight .c1 {
-  color: #4c566a !important;
+  color: #4c566a !important;  /* 주석 */
   font-style: italic !important;
 }
 
 .highlight .k,
-.highlight .kd,
-.highlight .kn {
-  color: #81a1c1 !important;
+.highlight .kd {
+  color: #81a1c1 !important;  /* 키워드 */
 }
 
 .highlight .s,
 .highlight .s1,
 .highlight .s2 {
-  color: #a3be8c !important;
+  color: #a3be8c !important;  /* 문자열 */
 }
 
 .highlight .mi,
 .highlight .mf {
-  color: #b48ead !important;
+  color: #b48ead !important;  /* 숫자 */
 }
 
 .highlight .nf {
-  color: #88c0d0 !important;
+  color: #88c0d0 !important;  /* 함수 */
 }
