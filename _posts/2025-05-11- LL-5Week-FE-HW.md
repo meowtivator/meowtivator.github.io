@@ -9,7 +9,7 @@ tags: [web, basic, frontend, react, 멋사, 과제]
 ## 과제 개요
 ### React의 Props 과제
 `Button.jsx` 컴포넌트를 수정하고, `App.jsx`에서 Props를 전달하여 버튼을 예시 사진과 같이 표현하여라.
-![img-description](frontend/5week_hw/5week_hw_ex.png)
+![img-description](https://meowtivator-blog-image.s3.ap-northeast-2.amazonaws.com/images/frontend/5week_hw/5week_hw_ex.png)
 _과제 예시 사진_
 
 ## 과제 수행
@@ -52,7 +52,7 @@ export default App
 
 ```
 ### 실행 결과
-![img-description](/frontend/5week_hw/HW_result.png)
+![img-description](https://meowtivator-blog-image.s3.ap-northeast-2.amazonaws.com/images/frontend/5week_hw/HW_result.png)
 _코드 실행 화면_
 
 
